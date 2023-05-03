@@ -1,14 +1,18 @@
 {
   outputs = { self, nixpkgs }: {
-    templates = {
+    templates = rec {
+      default = {
+        path = ./flake;
+        description = "A simple Nix flake";
+      };
+      flake = default;
       rust = {
         path = ./rust;
         description = "A simple Rust project";
-        welcomeText = ''
-          Options:
-          - PKG: Cargo package name
-          - EDITION: Rust edition
-        '';
+        envVars = {
+          PKG = "rust";
+          EDITION = 2021;
+        };
       };
     };
   };
