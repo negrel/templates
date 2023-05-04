@@ -16,7 +16,13 @@
             };
             lib = pkgs.lib;
           in
-          { });
+          {
+            devShells = {
+              default = pkgs.mkShell {
+                buildInputs = pkgBuildInputs;
+              };
+            };
+          });
     in
     outputsWithSystem // outputsWithoutSystem;
 }
