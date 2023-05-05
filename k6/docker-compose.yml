@@ -1,0 +1,7 @@
+version: '3'
+services:
+  k6:
+    image: docker.io/grafana/k6:$K6_VERSION
+    command: run /app/main.js
+    volumes:
+      - ./src/:/app/:ro
