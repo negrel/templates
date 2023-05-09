@@ -14,6 +14,14 @@ for template in *; do
 
   while IFS= read -r -d '' file; do
     copied_file="${file#../.common/}"
+
+		# If file already exist
+		if [ -f "$copied_file" ]; then
+		# And is different that current common file
+		# we ignore it.
+			diff "$file" "$copied_file" || continue
+		fi
+
     mkdir -p $(dirname "$copied_file")
     ln -f "$file" "$copied_file"
   done < <(find "../.common" -type f -print0)
