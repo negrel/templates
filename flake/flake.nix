@@ -19,7 +19,7 @@
           {
             devShells = {
               default = pkgs.mkShell {
-                buildInputs = pkgBuildInputs;
+                buildInputs = with pkgs; [ ];
               };
             };
           });
