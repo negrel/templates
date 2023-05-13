@@ -9,6 +9,12 @@
       };
       in
       rec {
+        c-bin = {
+          path = ./c-bin;
+          description = "A simple C project";
+          envVars = commonEnvVars;
+        };
+
         default = {
           path = ./flake;
           description = "A simple Nix flake";
