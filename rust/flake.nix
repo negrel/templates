@@ -25,16 +25,15 @@
         in
         {
           devShells = {
-            default = pkgs.mkShell
-              rec {
-                buildInputs = with pkgs; [ ] ++ pkgBuildInputs ++ (
-                  with pkgs.fenix; [
-                    complete.toolchain
-                    rust-analyzer-nightly
-                  ]
-                );
-                LD_LIBRARY_PATH = "${lib.makeLibraryPath pkgBuildInputs}";
-              };
+            default = pkgs.mkShell rec {
+              buildInputs = with pkgs; [ ] ++ pkgBuildInputs ++ (
+                with pkgs.fenix; [
+                  complete.toolchain
+                  rust-analyzer-nightly
+                ]
+              );
+              LD_LIBRARY_PATH = "${lib.makeLibraryPath pkgBuildInputs}";
+            };
           };
         });
 }
