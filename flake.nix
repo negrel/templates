@@ -28,6 +28,13 @@
           };
         };
         flake = default;
+        go = {
+          path = ./go;
+          description = "A simple Go project";
+          envVars = commonEnvVars // {
+            MOD = "beta";
+          };
+        };
         k6 = {
           path = ./k6;
           description = "A ready to use k6 setup";
