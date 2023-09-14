@@ -42,6 +42,11 @@
             K6_VERSION = "latest";
           };
         };
+        python = {
+          path = ./python;
+          description = "A simple Python project";
+          envVars = commonEnvVars;
+        };
         rust = {
           path = ./rust;
           description = "A simple Rust project";
