@@ -42,6 +42,13 @@
             K6_VERSION = "latest";
           };
         };
+        node = {
+          path = ./node;
+          description = "A simple Node.js projet";
+          envVars = commonEnvVars // {
+            PKG = "beta";
+          };
+        };
         python = {
           path = ./python;
           description = "A simple Python project";
