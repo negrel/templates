@@ -63,6 +63,10 @@
               PKG = "rust";
               # Rust edition entry in Cargo.toml
               EDITION = 2021;
+              # Rust analyzer
+              RUST_ANALYZER = "rust-analyzer";
+              # Toolchain
+              TOOLCHAIN = "stable";
             };
         };
       };

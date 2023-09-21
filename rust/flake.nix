@@ -28,8 +28,8 @@
             default = pkgs.mkShell rec {
               buildInputs = with pkgs; [ ] ++ pkgBuildInputs ++ (
                 with pkgs.fenix; [
-                  complete.toolchain
-                  rust-analyzer-nightly
+                  $TOOLCHAIN.toolchain
+                  $RUST_ANALYZER
                 ]
               );
               LD_LIBRARY_PATH = "${lib.makeLibraryPath pkgBuildInputs}";
