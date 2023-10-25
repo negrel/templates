@@ -1,0 +1,14 @@
+{
+	"name": "$PKG",
+	"version": "0.1.0",
+	"description": "$LONG_DESCRIPTION",
+	"module": "index.ts",
+	"type": "module",
+	"private": true,
+	"devDependencies": {
+		"bun-types": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	}
+}

@@ -9,6 +9,13 @@
       };
       in
       rec {
+        bun = {
+          path = ./bun;
+          description = "A simple bun project";
+          envVars = commonEnvVars // {
+            PKG = "beta";
+          };
+        };
         c-bin = {
           path = ./c-bin;
           description = "A simple C project";
