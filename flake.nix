@@ -31,7 +31,7 @@
           path = ./deno;
           description = "A simple Deno project";
           envVars = commonEnvVars // {
-            DENO_STDLIB_VERSION = "0.186.0";
+            DENO_STDLIB_VERSION = "0.210.0";
           };
         };
         flake = default;
