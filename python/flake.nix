@@ -17,7 +17,7 @@
           {
             devShells = {
               default = pkgs.mkShell {
-                buildInputs = with pkgs; [ python3 virtualenv ];
+                buildInputs = with pkgs; [ python3Full virtualenv ];
               };
             };
           });
