@@ -37,7 +37,7 @@ make tests
 ## Contributing
 
 If you want to contribute to `$PROJECT_NAME` to add a feature or improve the code contact
-me at [negrel.dev@protonmail.com](mailto:negrel.dev@protonmail.com), open an
+me at [alexandre@negrel.dev](mailto:alexandre@negrel.dev), open an
 [issue](https://github.com/negrel/$PROJECT_NAME/issues) or make a
 [pull request](https://github.com/negrel/$PROJECT_NAME/pulls).
 
