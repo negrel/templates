@@ -1,18 +1,20 @@
 -include variables.mk
 
-.PHONY: build
-build: $(BUILD_DIR)/$(TARGET_BIN)
+.PHONY: build/all
+build/all: $(CMDS:$(CMD_DIR)/%=$(BUILD_DIR)/%)
 
-$(BUILD_DIR)/$(TARGET_BIN): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $@
+build/%: CMD=$*
+build/%:
+	$(MAKE) $(BUILD_DIR)/$(CMD)
 
-$(BUILD_DIR)/%.o: %.c
+$(BUILD_DIR)/$(CMD): $(CMD_DIR)/$(CMD)/main.c
+	$(MKDIR_P) $(BUILD_DIR)
+	$(CC) $(CFLAGS) $< -o $@
+
+$(BUILD_DIR)/$(TEST_DIR)/%: $(TEST_DIR)/%.c
 	$(MKDIR_P) $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(BUILD_DIR)/$(TEST_DIR)/%: $(TEST_DIR)/%.c $(BUILD_DIR)/$(TARGET_LIB)
-	$(MKDIR_P) $(dir $@)
-	$(CC) $(TEST_CFLAGS) $(TEST_LDFLAGS) $< $(BUILD_DIR)/$(TARGET_LIB) -o $@
+	$(CC) $(CFLAGS) $(TEST_LDFLAGS) $^ -o $@
+	valgrind --quiet --leak-check=full --errors-for-leak-kinds=definite $@
 
 .PHONY: test/%
 test/%: $(BUILD_DIR)/$(TEST_DIR)/%_test

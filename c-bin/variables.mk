@@ -1,8 +1,13 @@
 PROJECT_DIR ?= $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 TARGET_BIN ?= $(shell basename $(PROJECT_DIR))
 
+export CMD
+CMDS ?= $(wildcard $(CMD_DIR)/*)
+
 BUILD_DIR ?= ./build
+CMD_DIR ?= ./cmd
 INC_DIR ?= ./inc
+LIB_DIR ?= ./lib
 SRC_DIR ?= ./src
 TEST_DIR ?= ./tests
 
