@@ -32,7 +32,7 @@
                   $RUST_ANALYZER
                 ]
               );
-              LD_LIBRARY_PATH = "${lib.makeLibraryPath pkgBuildInputs}";
+              LD_LIBRARY_PATH = "$${lib.makeLibraryPath pkgBuildInputs}";
             };
           };
         });
