@@ -1,12 +1,13 @@
 {
   outputs = { self, nixpkgs }: {
     templates =
-      let commonEnvVars = {
-        # OPTION_NAME = DEFAULT_VALUE
-        PROJECT_NAME = "";
-        DESCRIPTION = "";
-        LONG_DESCRIPTION = "";
-      };
+      let
+        commonEnvVars = {
+          # OPTION_NAME = DEFAULT_VALUE
+          PROJECT_NAME = "";
+          DESCRIPTION = "";
+          LONG_DESCRIPTION = "";
+        };
       in
       rec {
         bun = {
@@ -18,6 +19,12 @@
         };
         c-bin = {
           path = ./c-bin;
+          description = "A simple C project";
+          envVars = commonEnvVars;
+        };
+
+        c-lib = {
+          path = ./c-lib;
           description = "A simple C project";
           envVars = commonEnvVars;
         };
