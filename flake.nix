@@ -37,9 +37,7 @@
         deno = {
           path = ./deno;
           description = "A simple Deno project";
-          envVars = commonEnvVars // {
-            DENO_STDLIB_VERSION = "0.210.0";
-          };
+          envVars = commonEnvVars;
         };
         flake = default;
         go = {

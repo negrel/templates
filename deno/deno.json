@@ -10,7 +10,5 @@
 			]
 		}
 	},
-	"imports": {
-		"std/": "https://deno.land/std@$DENO_STDLIB_VERSION/"
-	}
+	"imports": {}
 }
