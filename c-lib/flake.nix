@@ -18,6 +18,7 @@
               clang
               pkg-config
               check
+              valgrind
             ];
             LD_LIBRARY_PATH = "$${lib.makeLibraryPath buildInputs}";
           };
