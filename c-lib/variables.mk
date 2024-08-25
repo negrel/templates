@@ -17,8 +17,8 @@ OBJS := $(SRCS:%.c=$(BUILD_DIR)/%.o)
 
 CC ?= clang
 CFLAGS ?=
-CFLAGS := $(CFLAGS) -Wall -I$(INC_DIR)
-TEST_CFLAGS := -Wall -I$(INC_DIR)
+CFLAGS := $(CFLAGS) -Wall -Wextra -Werror -I$(INC_DIR)
+TEST_CFLAGS := -Wall -Wextra -Werror -I$(INC_DIR)
 TEST_LDFLAGS := $(shell pkg-config --cflags --libs check)
 
 MKDIR := mkdir
